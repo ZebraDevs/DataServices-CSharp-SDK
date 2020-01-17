@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Zebra.Savanna</AssemblyName>
     <RootNamespace>Zebra.Savanna</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Zebra Technologies Corporation</Authors>
     <Company>Zebra Technologies Corporation</Company>
     <Copyright>2020 Zebra Technologies Corp.</Copyright>
     <RepositoryUrl>https://github.com/zebra/Savanna-API-Tools</RepositoryUrl>
-    <DocumentationFile>bin\$(Configuration)\netstandard2.0\Savanna-API-Tools.xml</DocumentationFile>
-    <AssemblyName>Zebra.Savanna</AssemblyName>
+    <DocumentationFile>bin\$(Configuration)\netstandard2.0\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
