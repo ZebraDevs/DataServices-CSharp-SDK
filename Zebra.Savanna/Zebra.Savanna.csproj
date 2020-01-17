@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Zebra.Savanna</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Zebra Technologies Corporation</Authors>
+    <Company>Zebra Technologies Corporation</Company>
+    <Copyright>2020 Zebra Technologies Corp.</Copyright>
+    <RepositoryUrl>https://github.com/zebra/Savanna-API-Tools</RepositoryUrl>
+    <DocumentationFile>bin\$(Configuration)\netstandard2.0\Savanna-API-Tools.xml</DocumentationFile>
+    <AssemblyName>Zebra.Savanna</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
