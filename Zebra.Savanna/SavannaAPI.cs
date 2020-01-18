@@ -84,7 +84,7 @@ namespace Zebra.Savanna
         /// <param name="json">The json response from a Savanna service.</param>
         public static void CheckErrors(string json)
         {
-            dynamic dynObj = JObject.Parse(json.Trim());
+            dynamic dynObj = JObject.Parse(json);
             if (dynObj.errorResponse != null)
             {
                 dynObj = dynObj.errorResponse;
