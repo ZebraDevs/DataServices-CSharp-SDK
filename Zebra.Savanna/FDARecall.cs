@@ -58,7 +58,7 @@ namespace Zebra.Savanna
         /// </summary>
         /// <param name="search">A simple one word search string</param>
         /// <param name="limit"> Maximum number of records to return</param>
-        /// <returns> A <see cref="string"/> containing results from the device recall search, if any</returns>
+        /// <returns> A <see cref="Recall{T}"/> containing results from the device recall search, if any</returns>
         public static async Task<Recall<Device>> DeserializeDeviceSearchAsync(string search, int limit = 1)
         {
             string json = await DeviceSearchAsync(search, limit);
@@ -70,7 +70,7 @@ namespace Zebra.Savanna
         /// </summary>
         /// <param name="search"> A simple one word search string</param>
         /// <param name="limit">Maximum number of records to return</param>
-        /// <returns>A <see cref="string"/> containing results from the drug recall search, if any</returns>
+        /// <returns>A <see cref="Recall{T}"/> containing results from the drug recall search, if any</returns>
         public static async Task<Recall<Product>> DeserializeDrugSearchAsync(string search, int limit = 1)
         {
             string json = await DrugSearchAsync(search, limit);
@@ -82,7 +82,7 @@ namespace Zebra.Savanna
         /// </summary>
         /// <param name="upc">A valid UPC code for a food item</param>
         /// <param name="limit">Maximum number of records to return (maximum 99)</param>
-        /// <returns>A <see cref="string"/> containing results from the food recall lookup, if any</returns>
+        /// <returns>A <see cref="Recall{T}"/> containing results from the food recall lookup, if any</returns>
         public static async Task<Recall<Product>> DeserializeFoodUpcAsync(string upc, int limit = 1)
         {
             string json = await FoodUpcAsync(upc, limit);
@@ -94,7 +94,7 @@ namespace Zebra.Savanna
         /// </summary>
         /// <param name="upc">Value</param>
         /// <param name="limit">Maximum number of records to return</param>
-        /// <returns>A <see cref="string"/> containing results from the drug recall lookup, if any</returns>
+        /// <returns>A <see cref="Recall{T}"/> containing results from the drug recall lookup, if any</returns>
         public static async Task<Recall<Product>> DeserializeDrugUpcAsync(string upc, int limit = 1)
         {
             string json = await DrugUpcAsync(upc, limit);
