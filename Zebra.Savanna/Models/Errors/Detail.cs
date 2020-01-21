@@ -1,4 +1,4 @@
-﻿namespace Zebra.Savanna.Models
+﻿namespace Zebra.Savanna.Models.Errors
 {
     /// <summary>
     /// Provides details about the results of an API call.

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Zebra.Savanna.Models;
+using Zebra.Savanna.Models.Errors;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;

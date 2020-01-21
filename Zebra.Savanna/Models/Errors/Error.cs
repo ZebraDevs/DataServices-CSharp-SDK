@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zebra.Savanna.Models
+namespace Zebra.Savanna.Models.Errors
 {
     /// <summary>
     /// Thrown when a Savanna API call does not succeed.
