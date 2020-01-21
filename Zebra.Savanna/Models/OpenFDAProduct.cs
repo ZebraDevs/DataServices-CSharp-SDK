@@ -110,7 +110,7 @@ namespace Zebra.Savanna.Models
         public List<string> ProductType { get; set; }
 
         /// <summary>
-        /// The route of administation of the drug product.
+        /// The route of administration of the drug product.
         /// http://www.fda.gov/ForIndustry/DataStandards/StructuredProductLabeling/ucm162034.htm
         /// </summary>
         [JsonProperty(PropertyName = "route")]

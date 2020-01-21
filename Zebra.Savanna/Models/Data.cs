@@ -80,7 +80,7 @@ namespace Zebra.Savanna.Models
         public string Size { get; set; }
 
         /// <summary>
-        /// Item model number with length &lt; 32.
+        /// Item dimension measurements.
         /// </summary>
         public string Dimension { get; set; }
 
