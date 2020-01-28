@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Zebra.Savanna.Models.Errors;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Zebra.Savanna.Models.Errors;
 
 namespace Zebra.Savanna
 {
@@ -70,10 +72,10 @@ namespace Zebra.Savanna
         protected static async Task<byte[]> CallServiceBytes(string api)
         {
             var response = await Client.GetAsync(baseUrl + api);
-            var json = (await response.Content.ReadAsStringAsync()).Trim();
-            if (json.StartsWith("{"))
+            if (!response.Headers.TryGetValues("Content-Type", out IEnumerable<string> v)
+                || new List<string>(v).FirstOrDefault() == "application/json")
             {
-                CheckErrors(json);
+                CheckErrors(await response.Content.ReadAsStringAsync());
             }
             return await response.Content.ReadAsByteArrayAsync();
         }
@@ -84,7 +86,15 @@ namespace Zebra.Savanna
         /// <param name="json">The json response from a Savanna service.</param>
         public static void CheckErrors(string json)
         {
-            dynamic dynObj = JObject.Parse(json);
+            dynamic dynObj;
+            try
+            {
+                dynObj = JObject.Parse(json);
+            }
+            catch (JsonReaderException)
+            {
+                return;
+            }
             if (dynObj.errorResponse != null)
             {
                 dynObj = dynObj.errorResponse;
