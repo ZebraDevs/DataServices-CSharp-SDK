@@ -110,7 +110,7 @@ namespace Zebra.Savanna
                 }
                 else
                 {
-                    var error = JsonConvert.DeserializeObject<Error<string>>(json);
+                    var error = JsonConvert.DeserializeObject<Error<string>>(((JObject)dynObj).ToString());
                     error = new Error<string>(message.ToString()) { Code = error.Code, Info = error.Info, DeveloperMessage = error.DeveloperMessage, };
                     throw error;
                 }

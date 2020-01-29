@@ -24,6 +24,11 @@ namespace Zebra.Savanna.Models.Errors
         public T DeveloperMessage { get; set; }
 
         /// <summary>
+        /// Provides details about the error encountered while making the API call.
+        /// </summary>
+        public string ErrorDetail { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Error{T}"/> class.
         /// </summary>
         public Error() { }
