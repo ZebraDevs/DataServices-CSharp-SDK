@@ -47,5 +47,28 @@ namespace Zebra.Savanna.Models.Errors
         /// <param name="innerException">The exception that is the cause of the current exception, or a null reference
         /// if no inner exception is specified.</param>
         public Error(string message, Exception innerException) : base(message, innerException) { }
+
+        /// <summary>
+        /// The formatted error message.
+        /// </summary>
+        public string MessageFormatted
+        {
+            get
+            {
+                string message = ErrorDetail;
+                if (string.IsNullOrWhiteSpace(message))
+                {
+                    if (DeveloperMessage is string sdm && !string.IsNullOrWhiteSpace(sdm))
+                    {
+                        message = sdm;
+                    }
+                    else if (DeveloperMessage is DeveloperMessage dm && !string.IsNullOrWhiteSpace(dm.Fault?.FaultString))
+                    {
+                        message = dm.Fault.FaultString;
+                    }
+                }
+                return string.IsNullOrWhiteSpace(message) || message == Message ? Message : $"{Message}: {message}";
+            }
+        }
     }
 }
