@@ -74,7 +74,7 @@ namespace Zebra.Savanna.Models.Errors
     /// <summary>
     /// Thrown when a Savanna API call does not succeed.
     /// </summary>
-    /// <typeparam name="T">The type for the <see cref="DeveloperMessage"/>.</typeparam>
+    /// <typeparam name="T">The type of the <see cref="DeveloperMessage"/>.</typeparam>
     public class Error<T> : Error
     {
         /// <summary>
