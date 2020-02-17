@@ -8,7 +8,7 @@ The core of this SDK is a basic API connection call to the Zebra Savanna Data Se
 * UPC Lookup
 * FDA Recall
 
-This SDK also has models for all the data sent and recieved by these APIs to make it easier to work with them.  
+This SDK also has models for all the data sent and received by these APIs to make it easier to work with them.  
 
 API Key
 -------
