@@ -1,14 +1,14 @@
-Zebra Savanna Data Services CSharp SDK
+Zebra Savanna Data Services C# SDK
 ======================================
 
-This is the source code for the Savanna CSharp SDK.  
+This is the source code for the Savanna C# SDK.  
 The core of this SDK is a basic API connection call to the Zebra Savanna Data Services in the SavannaAPI class.  Corrently the API has public methods for the three public APIs that are part of the Barcode Intelligence Product.  These APIs are:
 
 * Barcode Generate
 * UPC Lookup
 * FDA Recall
 
-This SDK also has models for all the data sent and recieved by these APIs in order to make it easier to work with them.  
+This SDK also has models for all the data sent and recieved by these APIs to make it easier to work with them.  
 
 API Key
 -------
