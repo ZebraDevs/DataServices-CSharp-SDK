@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Zebra.Savanna.Models;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Zebra.Savanna
 {
@@ -17,7 +18,7 @@ namespace Zebra.Savanna
         /// <returns> A <see cref="string"/> containing results from the device recall search, if any</returns>
         public static async Task<string> DeviceSearchAsync(string search, int limit = 1)
         {
-            return await CallService(string.Format("recalls/device/description?val={0}&limit={1}", search, limit));
+            return await CallService(string.Format("recalls/device/description?val={0}&limit={1}", HttpUtility.UrlEncode(search), limit));
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace Zebra.Savanna
         /// <returns>A <see cref="string"/> containing results from the drug recall search, if any</returns>
         public static async Task<string> DrugSearchAsync(string search, int limit = 1)
         {
-            return await CallService(string.Format("recalls/drug/description?val={0}&limit={1}", search, limit));
+            return await CallService(string.Format("recalls/drug/description?val={0}&limit={1}", HttpUtility.UrlEncode(search), limit));
         }
 
         /// <summary>

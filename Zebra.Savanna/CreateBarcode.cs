@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Web;
 
 namespace Zebra.Savanna
 {
@@ -31,7 +32,7 @@ namespace Zebra.Savanna
         public static async Task<byte[]> CreateAsync(Symbology symbology, string text, int scale = 1, Rotation rotate = Rotation.Normal, bool includeText = false)
         {
             var bytes = await CallServiceBytes(string.Format("barcode/generate?symbology={0}&text={1}&scale={2}&rotate={3}&includeText={4}",
-                    symbology.ToString().Replace('_', '-'), text, scale, (char)rotate, includeText));
+                    symbology.ToString().Replace('_', '-'), HttpUtility.UrlEncode(text), scale, (char)rotate, includeText));
             return bytes;
         }
 
@@ -61,7 +62,7 @@ namespace Zebra.Savanna
         {
             var bytes = await CallServiceBytes(
                     string.Format("barcode/generate?symbology={0}&text={1}&scaleX={2}&scaleY={3}&rotate={4}&includeText={5}",
-                            symbology.ToString().Replace('_', '-'), text, scaleX, scaleY, (char)rotate, includeText));
+                            symbology.ToString().Replace('_', '-'), HttpUtility.UrlEncode(text), scaleX, scaleY, (char)rotate, includeText));
             return bytes;
         }
     }
