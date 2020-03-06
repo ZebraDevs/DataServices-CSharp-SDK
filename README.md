@@ -29,24 +29,24 @@ Set Zebra Savanna API key
 
 Create Barcode
 
-`var barcodeBytes = await CreateBarcode.CreateAsync(symbology, barcodeText.Text);`
+`byte[] barcodeBytes = await CreateBarcode.CreateAsync(symbology, barcodeText.Text);`
 
 UPC Lookup
 
-`var upcLookupJson = await UPCLookup.LookupAsync(barcode);`
+`string upcLookupJson = await UPCLookup.LookupAsync(barcode);`
 
 FDA Food Recall
 
-`var foodUpcJson = await FDARecall.FoodUpcAsync(barcode);`
+`string foodUpcJson = await FDARecall.FoodUpcAsync(barcode);`
 
 FDA Drug Recall
 
-`var drugUpcJson = await FDARecall.DrugUpcAsync(barcode);`
+`string drugUpcJson = await FDARecall.DrugUpcAsync(barcode);`
 
 FDA Device Recall Search
 
-`var deviceSearchJson = await FDARecall.DeviceSearchAsync(searchText.Text);`
+`string deviceSearchJson = await FDARecall.DeviceSearchAsync(searchText.Text);`
 
 FDA Drug Recall Search
 
-`var drugSearchJson = await FDARecall.DrugSearchAsync(searchText.Text);`
+`string drugSearchJson = await FDARecall.DrugSearchAsync(searchText.Text);`
