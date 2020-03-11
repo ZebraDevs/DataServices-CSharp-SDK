@@ -1,8 +1,8 @@
 Zebra Savanna Data Services C# SDK
 ======================================
 
-This is the source code for the Savanna C# SDK.  
-The core of this SDK is a basic API connection call to the Zebra Savanna Data Services in the SavannaAPI class.  Currently the API has public methods for the three public APIs that are part of the Barcode Intelligence Product.  These APIs are:
+This is the source code for the Savanna C# Software Development Kit (SDK).  
+The core of this SDK is a basic API connection call to the Zebra Savanna Data Services in the SavannaAPI class.  Currently the API has public methods for the three public APIs that are part of the Barcode Intelligence product.  These APIs are:
 
 * Barcode Generate
 * UPC Lookup
